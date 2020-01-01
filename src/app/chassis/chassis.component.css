@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+mat-form-field {
+  margin: 15px;
+}

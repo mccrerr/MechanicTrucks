@@ -1,0 +1,32 @@
+<!-- <mat-toolbar color="primary"> -->
+<div fxHide.gt-xs>
+  <button mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>
+<mat-toolbar-row>
+  <mat-toolbar color="primary">
+    <a routerLink="/">
+      <h1>Mechanic Trucks Garage</h1>
+    </a>
+    <span class="menu-spacer"></span>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.x>
+      <mat-nav-list class="navigation-items">
+        <a *ngIf="!isAuth" mat-button routerLink="/auth/login" routerLinkActive="active">Log In</a>
+        <a *ngIf="!isAuth" mat-button routerLink="/auth/signup" routerLinkActive="active">Sign Up</a>
+        <a *ngIf="isAuth" style="cursor: pointer" (click)="onLogout()">Logout</a>
+      </mat-nav-list>
+    </div>
+  </mat-toolbar>
+</mat-toolbar-row>
+
+<mat-toolbar-row *ngIf="isAuth">
+  <mat-toolbar color="accent">
+    <mat-nav-list class="navigation-items">
+      <a mat-button routerLink="/garage" routerLinkActive="active">Garage</a>
+      <a mat-button routerLink="/chassis" routerLinkActive="active">Chassis</a>
+      <a mat-button routerLink="/engineTrans" routerLinkActive="active">Engine/Transmission</a>
+    </mat-nav-list>
+  </mat-toolbar>
+</mat-toolbar-row>
+<!-- </mat-toolbar> -->

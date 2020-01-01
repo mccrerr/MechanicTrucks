@@ -1,0 +1,37 @@
+<section class="signup-form">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+    <!-- does not center on main axis because the height is only the
+     height of the element it self.  If we set height to 100%  on wrapping container then it would center
+    doesn't work right according to comment-->
+    <mat-form-field>
+      <input type="email" matInput placeholder="Your email" name="email" ngModel email required #emailInput="" />
+      <mat-error>Email is invalid.</mat-error>
+      <!-- <mat-error *ngIf="emailInput.hasError('required')">Field Must Not Be Empty.</mat-error> -->
+    </mat-form-field>
+    <mat-form-field hintLabel="Should be aleast 6 characters long">
+      <input type="password" matInput placeholder="Your password" required ngModel name="password" minlength="6"
+        #pwInput="" />
+      <!-- ngModel -->
+      <mat-hint align="end">{{ pwInput.value?.length }}/6</mat-hint>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [matDatepicker]="picker" [max]="maxDate"
+        required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <mat-checkbox labelPosition="after" color="primary" required>Agree to terms and conditions?</mat-checkbox>
+
+    <button mat-button *ngIf="!isLoading" type="submit" color="primary" mat-raised-button [disabled]="f.invalid">
+      Submit
+    </button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </form>
+</section>
+
+<!-- <section id = "container">
+  <div class="child" id="child1" ></div>
+  <div class="child" id="child2" ></div>
+  <div class="child" id="child3" ></div>
+</section> -->
