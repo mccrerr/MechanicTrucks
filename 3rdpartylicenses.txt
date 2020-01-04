@@ -123,6 +123,10 @@ THE SOFTWARE.
 
 @angular/material/core
 
+@angular/material/datepicker
+
+@angular/material/dialog
+
 @angular/material/form-field
 
 @angular/material/icon
@@ -130,6 +134,8 @@ THE SOFTWARE.
 @angular/material/list
 
 @angular/material/progress-spinner
+
+@angular/material/select
 
 @angular/material/sidenav
 
